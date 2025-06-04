@@ -1,1 +1,5 @@
-/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/App.java
+/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/audience/AudienceModule.java
+/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/backend/BackendApplication.java
+/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/backend/HelloController.java
+/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/organizer/OrganizerModule.java
+/Users/wl/Documents/workspaces/badminton-tournament-manager/backend/src/main/java/de/btm/participant/ParticipantModule.java
