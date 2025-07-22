@@ -1,0 +1,17 @@
+de/btm/organizer/internal/OrganizerRepository.class
+de/btm/participant/controller/ParticipantController.class
+de/btm/audience/package-info.class
+de/btm/participant/package-info.class
+de/btm/backend/BackendApplication.class
+de/btm/backend/HelloController.class
+de/btm/organizer/service/OrganizerService.class
+de/btm/organizer/controller/OrganizerController.class
+de/btm/organizer/dto/OrganizerDTO.class
+de/btm/organizer/package-info.class
+de/btm/participant/internal/ParticipantRepository.class
+de/btm/participant/service/ParticipantService.class
+de/btm/audience/dto/AudienceDTO.class
+de/btm/audience/controller/AudienceController.class
+de/btm/audience/internal/AudienceRepository.class
+de/btm/audience/service/AudienceService.class
+de/btm/participant/dto/ParticipantDTO.class
