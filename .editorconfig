@@ -1,0 +1,51 @@
+# EditorConfig hilft, konsistente Codestile für verschiedene Editoren und IDEs zu definieren
+# Mehr Infos: https://editorconfig.org/
+
+root = true
+
+# Standard für alle Dateien
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Kotlin & Java
+[*.{kt,java}]
+indent_size = 4
+max_line_length = 120
+
+# Dart
+[*.dart]
+indent_size = 2
+max_line_length = 80
+
+# TypeScript & JavaScript
+[*.{ts,tsx,js,jsx}]
+indent_size = 2
+max_line_length = 100
+
+# HTML
+[*.html]
+indent_size = 2
+max_line_length = 120
+
+# SCSS
+[*.scss]
+indent_size = 2
+max_line_length = 120
+
+# SQL
+[*.sql]
+indent_size = 2
+max_line_length = 120
+
+# YAML
+[*.yml]
+indent_size = 2
+
+# Markdown (keine Whitespace-Entfernung)
+[*.md]
+trim_trailing_whitespace = false 
