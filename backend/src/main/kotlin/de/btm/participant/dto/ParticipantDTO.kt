@@ -1,5 +1,8 @@
 package de.btm.participant.dto
 
 data class ParticipantDTO(
-    // Felder für die Datenübertragung
+    val id: Long? = null,
+    val name: String = "",
+    val email: String = "",
+    val phone: String = ""
 ) 
