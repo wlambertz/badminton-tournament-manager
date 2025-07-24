@@ -16,6 +16,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <java.version>21</java.version>
+    <kotlin.version>1.9.24</kotlin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -57,12 +58,82 @@
       <groupId>org.springframework.modulith</groupId>
       <artifactId>spring-modulith-starter-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>${kotlin.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+      <version>${kotlin.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-maven-allopen</artifactId>
+      <version>${kotlin.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>de.btm.backend.BackendApplicationKt</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <version>${kotlin.version}</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test-compile</id>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirs>
+            <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
+            <sourceDir>${project.basedir}/src/main/java</sourceDir>
+          </sourceDirs>
+          <testSourceDirs>
+            <testSourceDir>${project.basedir}/src/test/kotlin</testSourceDir>
+            <testSourceDir>${project.basedir}/src/test/java</testSourceDir>
+          </testSourceDirs>
+          <compilerPlugins>
+            <plugin>all-open</plugin>
+          </compilerPlugins>
+          <jvmTarget>21</jvmTarget>
+          <allOpen>
+            <annotation>org.springframework.stereotype.Component</annotation>
+            <annotation>org.springframework.transaction.annotation.Transactional</annotation>
+            <annotation>org.springframework.scheduling.annotation.Scheduled</annotation>
+            <annotation>org.springframework.boot.autoconfigure.SpringBootApplication</annotation>
+          </allOpen>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-allopen</artifactId>
+            <version>${kotlin.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
