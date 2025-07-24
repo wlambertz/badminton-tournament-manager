@@ -1,3 +1,4 @@
 # Ignoriere Build-Output
 /target/
-.gradle/ 
+.gradle/
+/build/ 
