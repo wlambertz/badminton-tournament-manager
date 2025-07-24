@@ -11,5 +11,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  backend:
+    build:
+      context: ./backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/btm
+      SPRING_DATASOURCE_USERNAME: btmuser
+      SPRING_DATASOURCE_PASSWORD: btmpassword
+    ports:
+      - "8080:8080"
 volumes:
   postgres_data:
